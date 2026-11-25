@@ -1,0 +1,47 @@
+{
+  "name": "@cloudcorprecords/anh",
+  "version": "0.1.0",
+  "description": "Agent native code platform: passports, intents, workrooms, proof packs, and human review for agent written code. CLI: anh.",
+  "license": "MIT",
+  "author": "Rene Turcios",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CloudCorpRecords/agent-native-hub.git"
+  },
+  "homepage": "https://github.com/CloudCorpRecords/agent-native-hub#readme",
+  "bugs": {
+    "url": "https://github.com/CloudCorpRecords/agent-native-hub/issues"
+  },
+  "keywords": [
+    "ai-agents",
+    "code-review",
+    "proof-pack",
+    "mcp",
+    "cli",
+    "agent-passport"
+  ],
+  "type": "module",
+  "bin": {
+    "anh": "src/cli.ts"
+  },
+  "files": [
+    "src",
+    "scripts",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "demo": "bash scripts/demo.sh",
+    "serve": "node src/cli.ts serve",
+    "mcp": "node src/cli.ts mcp",
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "typescript": "^5.9.3"
+  }
+}

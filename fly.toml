@@ -1,0 +1,42 @@
+# Fly.io deploy config for the hosted service layer (review inbox).
+# App name note: "agent-native-github" was rejected by Fly's abuse filter
+# because it contains the word GitHub, so the Fly app is "agent-native-hub".
+# The project codename stays agent-native-github; only the Fly app differs.
+# Deploy status 2026-11-19: LIVE. Deployed from the Razer (the VM route
+# fails reaching the Depot builder, TLS handshake error, VM egress) and
+# verified: https://agent-native-hub.fly.dev/healthz returns HTTP 200.
+# See README, Hosting and deployment.
+# Replit is banned for this product and must not be used for hosting,
+# deployment, or dev environment. See README, constraints section.
+
+app = "agent-native-hub"
+primary_region = "sjc"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "8080"
+  ANH_WORKSPACE = "/data"
+  # ANH_INBOX_TOKEN is NOT set here: it is a secret. Set it before any
+  # public deploy with: fly secrets set ANH_INBOX_TOKEN=<token>
+  # Without it the inbox is open, which is only safe for local dogfood.
+
+[[mounts]]
+  source = "anh_data"
+  destination = "/data"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "off"
+  auto_start_machines = true
+  min_machines_running = 1
+
+  [[http_service.checks]]
+    type = "http"
+    interval = "15s"
+    timeout = "2s"
+    grace_period = "5s"
+    method = "GET"
+    path = "/healthz"
