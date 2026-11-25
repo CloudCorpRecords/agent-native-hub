@@ -8,11 +8,11 @@ The CLI binary is `anh`. The local store is plain JSON under a `.anh/` directory
 
 ## Install
 
-Released as `@cloudcorprecords/anh` on npm (v0.1.0) and developed in the open at [github.com/CloudCorpRecords/agent-native-hub](https://github.com/CloudCorpRecords/agent-native-hub). Live review inbox: [agent-native-hub.fly.dev](https://agent-native-hub.fly.dev).
+Released as `@reneturcios/anh` on npm (v0.1.0) and developed in the open at [github.com/CloudCorpRecords/agent-native-hub](https://github.com/CloudCorpRecords/agent-native-hub). Live review inbox: [agent-native-hub.fly.dev](https://agent-native-hub.fly.dev).
 
 ```bash
-npm install -g @cloudcorprecords/anh   # puts `anh` on your PATH
-npx @cloudcorprecords/anh passport list  # or run it without installing
+npm install -g @reneturcios/anh   # puts `anh` on your PATH
+npx @reneturcios/anh passport list  # or run it without installing
 ```
 
 Requires Node 22.6 or newer. The published package has zero runtime dependencies.

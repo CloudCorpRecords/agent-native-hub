@@ -1,5 +1,5 @@
 {
-  "name": "@cloudcorprecords/anh",
+  "name": "@reneturcios/anh",
   "version": "0.1.0",
   "description": "Agent native code platform: passports, intents, workrooms, proof packs, and human review for agent written code. CLI: anh.",
   "license": "MIT",
